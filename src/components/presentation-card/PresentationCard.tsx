@@ -1,8 +1,10 @@
 import { SKILLS } from '@/constants/skills';
 import { Box, Chip, Stack, Typography } from '@mui/material';
 import { memo } from 'react';
-import backgroundImage from '@/assets/me.jpg';
+import backgroundImage from '@/assets/img/me.jpg';
 import { calculateAge } from '@/utils/utils';
+import LanguageToggleButton from './LanguageToggleButton';
+import { useTranslation, Trans } from 'react-i18next';
 
 const userName = 'rogi_rib';
 const name = 'Igor Souza';
@@ -12,6 +14,8 @@ const age = calculateAge(birthDate);
 const skillsWithAge = [`${age} y.o.`, ...SKILLS];
 
 const PresentationCard = () => {
+  const { t } = useTranslation();
+
   return (
     <Box
       sx={{
@@ -24,6 +28,17 @@ const PresentationCard = () => {
         backgroundPosition: 'center',
       }}
     >
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 16,
+          right: 16,
+          zIndex: 2,
+        }}
+      >
+        <LanguageToggleButton />
+      </Box>
+
       <Box
         sx={{
           position: 'absolute',
@@ -53,8 +68,8 @@ const PresentationCard = () => {
         </Typography>
 
         <Typography variant="h5" fontWeight={800} lineHeight={1.1} sx={{ mt: 1 }}>
-          Olá! <br />
-          Eu sou {name}
+          {t('presentationCard:hello')} <br />
+          {t('presentationCard:who_am_i', { name })}
         </Typography>
 
         <Typography
@@ -63,8 +78,7 @@ const PresentationCard = () => {
             opacity: 0.9,
           }}
         >
-          Desenvolvedor com experiência em criar soluções mobile e web intuitivas, seguras e
-          escaláveis, com foco em experiência do usuário.
+          <Trans i18nKey="presentationCard:description" />
         </Typography>
 
         <Stack

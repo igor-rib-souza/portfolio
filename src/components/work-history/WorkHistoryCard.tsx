@@ -2,8 +2,8 @@ import { Box, Typography } from '@mui/material';
 import { memo } from 'react';
 import WorkHistoryItem from './WorkHistoryItem';
 
-import cyanLogo from '@/assets/cyan_agroanalytics_logo.jpg';
-import pactoMaisLogo from '@/assets/pacto-mais.png';
+import cyanLogo from '@/assets/img/cyan_agroanalytics_logo.jpg';
+import pactoMaisLogo from '@/assets/img/pacto-mais.png';
 
 const workExperiences = [
   {

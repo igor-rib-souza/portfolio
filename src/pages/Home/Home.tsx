@@ -13,7 +13,7 @@ const Home = () => {
       <Grid size={{ xs: 12, md: 4 }}>
         <Box display="flex" flexDirection="column" gap={2}>
           <PresentationCard />
-          <LocationCard address="João Pessoa - PB, Brasil" label="Horário local" />
+          <LocationCard address="João Pessoa - PB, Brasil" />
         </Box>
       </Grid>
       <Grid size={{ xs: 12, md: 4 }}>

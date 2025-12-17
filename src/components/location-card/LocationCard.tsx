@@ -1,19 +1,23 @@
 import { Box, Typography } from '@mui/material';
 import { memo, useEffect, useState } from 'react';
-import mapImage from '@/assets/map.jpg';
+import mapImage from '@/assets/img/map.jpg';
+import { useTranslation } from 'react-i18next';
+import i18n from '@/setup/i18n';
 
 interface LocationCardProps {
   address?: string;
-  label: string;
 }
 
-const LocationCard = ({ address, label }: LocationCardProps) => {
-  const [timeString, setTimeString] = useState<string>('');
+const LocationCard = ({ address }: LocationCardProps) => {
+  const [time, setTime] = useState('');
+  const [timeZone, setTimeZone] = useState('');
+  const { t } = useTranslation();
 
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      const time = now.toLocaleTimeString('pt-BR', {
+
+      const formattedTime = now.toLocaleTimeString(i18n.language, {
         hour: '2-digit',
         minute: '2-digit',
       });
@@ -22,13 +26,14 @@ const LocationCard = ({ address, label }: LocationCardProps) => {
       const sign = offset >= 0 ? '+' : '-';
       const gmt = `GMT${sign}${Math.abs(offset)}`;
 
-      setTimeString(`${time} ${gmt}`);
+      setTime(formattedTime);
+      setTimeZone(gmt);
     };
 
     updateTime();
-    const interval = setInterval(updateTime, 1000);
+    const interval = setInterval(updateTime, 60_000);
     return () => clearInterval(interval);
-  }, []);
+  }, [i18n.language]);
 
   return (
     <Box
@@ -73,7 +78,7 @@ const LocationCard = ({ address, label }: LocationCardProps) => {
           {address && <Typography fontWeight={600}>{address}</Typography>}
 
           <Typography variant="body2" sx={{ opacity: 0.75, mt: 0.5 }}>
-            {timeString} {label}
+            {t('locationCard:local_time', { time, timeZone })}
           </Typography>
         </Box>
 
