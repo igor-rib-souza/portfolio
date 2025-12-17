@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { memo } from 'react';
-import gifBackground from '@/assets/background.gif';
+//import gifBackground from '@/assets/background.gif';
 
 const QuoteCard = () => {
   return (
@@ -12,7 +12,7 @@ const QuoteCard = () => {
         borderRadius: 4,
         overflow: 'hidden',
         boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
-        backgroundImage: `url(${gifBackground})`,
+        //backgroundImage: `url(${gifBackground})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
