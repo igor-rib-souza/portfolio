@@ -2,9 +2,14 @@ import { SKILLS } from '@/constants/skills';
 import { Box, Chip, Stack, Typography } from '@mui/material';
 import { memo } from 'react';
 import backgroundImage from '@/assets/me.jpg';
+import { calculateAge } from '@/utils/utils';
 
 const userName = 'rogi_rib';
 const name = 'Igor Souza';
+const birthDate = '06/04/2002';
+
+const age = calculateAge(birthDate);
+const skillsWithAge = [`${age} y.o.`, ...SKILLS];
 
 const PresentationCard = () => {
   return (
@@ -72,7 +77,7 @@ const PresentationCard = () => {
             justifyContent: { xs: 'center', md: 'flex-start' },
           }}
         >
-          {SKILLS.map((skill) => (
+          {skillsWithAge.map((skill) => (
             <Chip
               key={skill}
               label={skill}

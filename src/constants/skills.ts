@@ -1,1 +1,1 @@
-export const SKILLS = ['23 y.o.', 'TypeScript', 'JavaScript', 'ReactJS', 'NodeJS'];
+export const SKILLS = ['TypeScript', 'JavaScript', 'ReactJS', 'NodeJS'];
