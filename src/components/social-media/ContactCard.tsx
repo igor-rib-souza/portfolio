@@ -6,8 +6,7 @@ import { memo } from 'react';
 const ContactCard = () => {
   const whatsapp = 'https://api.whatsapp.com/send/?phone=5583987157630';
   const cvPT = 'https://drive.google.com/file/d/1ucaHyU5VmkqlOnQC_LdsfJ3Gg-g5WLYt/view?usp=sharing';
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const cvEN = 'https://drive.google.com/file/d/1ae3J387EhOiLF4W1oGi8OLyuTEkrHDzQ/view?usp=sharing';
+  //const cvEN = 'https://drive.google.com/file/d/1ae3J387EhOiLF4W1oGi8OLyuTEkrHDzQ/view?usp=sharing';
 
   return (
     <Box
