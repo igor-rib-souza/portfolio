@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { memo } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 //import gifBackground from '@/assets/background.gif';
+import backgroundImage from '@/assets/img/albert-camus.webp';
 
 const QuoteCard = () => {
   useTranslation();
@@ -15,7 +16,7 @@ const QuoteCard = () => {
         borderRadius: 4,
         overflow: 'hidden',
         boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
-        //backgroundImage: `url(${gifBackground})`,
+        backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
