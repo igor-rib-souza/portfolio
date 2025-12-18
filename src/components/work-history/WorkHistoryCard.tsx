@@ -4,27 +4,37 @@ import WorkHistoryItem from './WorkHistoryItem';
 
 import cyanLogo from '@/assets/img/cyan_agroanalytics_logo.jpg';
 import pactoMaisLogo from '@/assets/img/pacto-mais.png';
-
-const workExperiences = [
-  {
-    imagePath: cyanLogo,
-    enterpriseUrl: 'https://www.cyan-agro.com.br/',
-    title: 'Cyan Agroanalytics',
-    description:
-      'Plataforma de inteligência geoclimática com dashboards interativos e dados em tempo real, desenvolvida com React e TypeScript.',
-    stack: ['Typescript', 'React', 'Vite', 'Vitest', 'MUi', 'OpenLayers'],
-  },
-  {
-    imagePath: pactoMaisLogo,
-    enterpriseUrl: 'https://www.pactomais.com.br/',
-    title: 'Pacto Mais',
-    description:
-      'Solução corporativa com uso de inteligência artificial para automação e validação de documentos, integrando OCR, visão computacional e aplicações full stack.',
-    stack: ['Typescript', 'Angular', 'Java', 'SpringBoot', 'MySql', 'Jmeter', 'YOLO', 'Tesseract'],
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const WorkHistoryCard = () => {
+  const { t } = useTranslation();
+
+  const workExperiences = [
+    {
+      imagePath: cyanLogo,
+      enterpriseUrl: 'https://www.cyan-agro.com.br/',
+      title: 'Cyan Agroanalytics',
+      description: t('workHistoryCard:work_experience.cyan'),
+      stack: ['Typescript', 'React', 'Vite', 'Vitest', 'MUi', 'OpenLayers'],
+    },
+    {
+      imagePath: pactoMaisLogo,
+      enterpriseUrl: 'https://www.pactomais.com.br/',
+      title: 'Pacto Mais',
+      description: t('workHistoryCard:work_experience.pacto'),
+      stack: [
+        'Typescript',
+        'Angular',
+        'Java',
+        'SpringBoot',
+        'MySql',
+        'Jmeter',
+        'YOLO',
+        'Tesseract',
+      ],
+    },
+  ];
+
   return (
     <Box
       sx={{

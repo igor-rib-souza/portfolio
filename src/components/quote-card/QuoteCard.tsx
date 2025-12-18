@@ -1,8 +1,11 @@
 import { Box, Typography } from '@mui/material';
 import { memo } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 //import gifBackground from '@/assets/background.gif';
 
 const QuoteCard = () => {
+  useTranslation();
+
   return (
     <Box
       sx={{
@@ -42,8 +45,7 @@ const QuoteCard = () => {
           animation: 'fadeIn 1.5s ease',
         }}
       >
-        “Não se pode criar experiência, <br />
-        É preciso passar por ela.”
+        <Trans i18nKey="quoteCard:quote" />
         <br />- Albert Camus
       </Typography>
       <style>

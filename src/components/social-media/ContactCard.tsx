@@ -2,11 +2,20 @@ import { Box, Button } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import DownloadIcon from '@mui/icons-material/Download';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ContactCard = () => {
+  const { t, i18n } = useTranslation();
+  const normalizedLanguage = i18n.language.split('-')[0] as keyof typeof cvs;
+
   const whatsapp = 'https://api.whatsapp.com/send/?phone=5583987157630';
   const cvPT = 'https://drive.google.com/file/d/1ucaHyU5VmkqlOnQC_LdsfJ3Gg-g5WLYt/view?usp=sharing';
-  //const cvEN = 'https://drive.google.com/file/d/1ae3J387EhOiLF4W1oGi8OLyuTEkrHDzQ/view?usp=sharing';
+  const cvEN = 'https://drive.google.com/file/d/1ae3J387EhOiLF4W1oGi8OLyuTEkrHDzQ/view?usp=sharing';
+
+  const cvs = {
+    pt: cvPT,
+    en: cvEN,
+  };
 
   return (
     <Box
@@ -41,11 +50,11 @@ const ContactCard = () => {
           },
         }}
       >
-        Entre em contato
+        {t('contactCard:contact_me')}
       </Button>
 
       <Button
-        href={cvPT}
+        href={cvs[normalizedLanguage]}
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
@@ -62,7 +71,7 @@ const ContactCard = () => {
           },
         }}
       >
-        CV
+        {t('contactCard:cv')}
       </Button>
     </Box>
   );
