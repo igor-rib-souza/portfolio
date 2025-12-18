@@ -21,6 +21,7 @@ const ContactCard = () => {
     <Box
       sx={{
         px: 4,
+        py: { xs: 2, sm: 0 },
         borderRadius: 4,
         backgroundColor: '#0f0f0f',
         display: 'flex',
