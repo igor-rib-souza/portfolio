@@ -19,20 +19,23 @@ const WorkHistoryModal = ({ open, onClose, data }: WorkHistoryModalProps) => {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          width: '90%',
-          maxWidth: 600,
+          width: { xs: '82%', sm: '85%', md: 600 },
+          maxHeight: '90vh',
+          overflowY: 'auto',
           bgcolor: '#0f0f0f',
           color: 'common.white',
-          borderRadius: 4,
+          borderRadius: { xs: 2, sm: 4 },
           boxShadow: '0 24px 64px rgba(0,0,0,0.6)',
-          p: 4,
+          p: { xs: 2.5, sm: 4 },
           outline: 'none',
         }}
       >
         <Box
           sx={{
             display: 'flex',
-            alignItems: 'flex-start',
+            flexDirection: { xs: 'column', sm: 'row' },
+            alignItems: { xs: 'center', sm: 'flex-start' },
+            textAlign: { xs: 'justify', sm: 'left' },
             gap: 3,
           }}
         >
@@ -41,8 +44,8 @@ const WorkHistoryModal = ({ open, onClose, data }: WorkHistoryModalProps) => {
             src={imagePath}
             alt={title}
             sx={{
-              width: 80,
-              height: 80,
+              width: { xs: 96, sm: 80 },
+              height: { xs: 96, sm: 80 },
               borderRadius: 2,
               objectFit: 'cover',
               flexShrink: 0,
@@ -86,7 +89,13 @@ const WorkHistoryModal = ({ open, onClose, data }: WorkHistoryModalProps) => {
           </Link>
         </Box>
 
-        <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ mt: 3 }}>
+        <Stack
+          direction="row"
+          spacing={1}
+          useFlexGap
+          flexWrap="wrap"
+          sx={{ mt: 3, justifyContent: { xs: 'center', sm: 'flex-start' } }}
+        >
           {stack.map((tech) => (
             <Chip
               key={tech}
