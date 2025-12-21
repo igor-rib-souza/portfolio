@@ -1,6 +1,6 @@
 export type WorkHistoryItemData = {
   imagePath: string;
-  enterpriseUrl: string;
+  url: string;
   title: string;
   description: string;
   stack: string[];

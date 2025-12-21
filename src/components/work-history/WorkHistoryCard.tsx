@@ -4,24 +4,37 @@ import WorkHistoryItem from './WorkHistoryItem';
 
 import cyanLogo from '@/assets/img/cyan_agroanalytics_logo.jpg';
 import pactoMaisLogo from '@/assets/img/pacto-mais.png';
+import reactLogo from '@/assets/img/react_logo.png';
+
 import { useTranslation } from 'react-i18next';
+import type { WorkHistoryItemData } from '@/types/WorkHistoryItemData';
 
 const WorkHistoryCard = () => {
   const { t } = useTranslation();
 
-  const workExperiences = [
+  const personalWorkExperiences: WorkHistoryItemData[] = [
+    {
+      imagePath: reactLogo,
+      url: 'https://github.com/igor-rib-souza/portfolio',
+      title: t('workHistoryCard:portfolio'),
+      description: t('workHistoryCard:work_experience.personal.portfolio'),
+      stack: ['Typescript', 'React', 'MUi', 'Vite', 'i18n'],
+    },
+  ];
+
+  const professionalWorkExperiences: WorkHistoryItemData[] = [
     {
       imagePath: cyanLogo,
-      enterpriseUrl: 'https://www.cyan-agro.com.br/',
+      url: 'https://www.cyan-agro.com.br/',
       title: 'Cyan Agroanalytics',
-      description: t('workHistoryCard:work_experience.cyan'),
-      stack: ['Typescript', 'React', 'Vite', 'Vitest', 'MUi', 'OpenLayers'],
+      description: t('workHistoryCard:work_experience.professional.cyan'),
+      stack: ['Typescript', 'React', 'Vite', 'Vitest', 'MUi', 'OpenLayers', 'i18n'],
     },
     {
       imagePath: pactoMaisLogo,
-      enterpriseUrl: 'https://www.pactomais.com.br/',
+      url: 'https://www.pactomais.com.br/',
       title: 'Pacto Mais',
-      description: t('workHistoryCard:work_experience.pacto'),
+      description: t('workHistoryCard:work_experience.professional.pacto'),
       stack: [
         'Typescript',
         'Angular',
@@ -50,12 +63,27 @@ const WorkHistoryCard = () => {
         height: '100%',
       }}
     >
-      <Typography sx={{ padding: '16px 16px 0px 16px' }}>{t('workHistoryCard:professional')}</Typography>
-      {workExperiences.map((workExperience, index) => (
+      <Typography sx={{ padding: '16px 16px 0px 16px' }}>
+        {t('workHistoryCard:professional')}
+      </Typography>
+      {professionalWorkExperiences.map((workExperience, index) => (
         <WorkHistoryItem
           key={index}
           imagePath={workExperience.imagePath}
-          enterpriseUrl={workExperience.enterpriseUrl}
+          url={workExperience.url}
+          description={workExperience.description}
+          title={workExperience.title}
+          stack={workExperience.stack}
+        />
+      ))}
+      <Typography sx={{ padding: '16px 16px 0px 16px' }}>
+        {t('workHistoryCard:personal')}
+      </Typography>
+      {personalWorkExperiences.map((workExperience, index) => (
+        <WorkHistoryItem
+          key={index}
+          imagePath={workExperience.imagePath}
+          url={workExperience.url}
           description={workExperience.description}
           title={workExperience.title}
           stack={workExperience.stack}

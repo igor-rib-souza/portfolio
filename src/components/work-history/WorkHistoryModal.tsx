@@ -9,7 +9,7 @@ interface WorkHistoryModalProps {
 }
 
 const WorkHistoryModal = ({ open, onClose, data }: WorkHistoryModalProps) => {
-  const { imagePath, title, description, stack, enterpriseUrl } = data;
+  const { imagePath, title, description, stack, url } = data;
 
   return (
     <Modal open={open} onClose={onClose}>
@@ -75,7 +75,7 @@ const WorkHistoryModal = ({ open, onClose, data }: WorkHistoryModalProps) => {
           </Typography>
 
           <Link
-            href={enterpriseUrl}
+            href={url}
             target="_blank"
             rel="noopener noreferrer"
             underline="hover"
@@ -85,7 +85,7 @@ const WorkHistoryModal = ({ open, onClose, data }: WorkHistoryModalProps) => {
               wordBreak: 'break-all',
             }}
           >
-            {enterpriseUrl}
+            {url}
           </Link>
         </Box>
 
