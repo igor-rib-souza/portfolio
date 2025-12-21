@@ -64,7 +64,7 @@ const PresentationCard = () => {
           @{userName}
         </Typography>
 
-        <Typography variant="h5" fontWeight={800} lineHeight={1.1} sx={{ mt: 1 }}>
+        <Typography variant="h4" fontWeight={800} lineHeight={1.1} sx={{ mt: 1 }}>
           {t('presentationCard:hello')} <br />
           {t('presentationCard:who_am_i', { name })}
         </Typography>
