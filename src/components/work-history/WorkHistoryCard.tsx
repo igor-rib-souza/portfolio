@@ -50,7 +50,7 @@ const WorkHistoryCard = () => {
         height: '100%',
       }}
     >
-      <Typography sx={{ padding: '16px 16px 0px 16px' }}>PROFISSIONAL</Typography>
+      <Typography sx={{ padding: '16px 16px 0px 16px' }}>{t('workHistoryCard:professional')}</Typography>
       {workExperiences.map((workExperience, index) => (
         <WorkHistoryItem
           key={index}
