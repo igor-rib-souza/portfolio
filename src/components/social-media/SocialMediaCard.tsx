@@ -4,6 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import { memo } from 'react';
+import { PURPLE } from '@/constants/colors';
 
 const SocialMediaCard = () => {
   const github = 'https://github.com/igor-rib-souza';
@@ -22,7 +23,7 @@ const SocialMediaCard = () => {
         alignItems: 'center',
         justifyContent: 'space-between',
         boxShadow: '0 8px 24px rgba(0,0,0,0.35)',
-        minHeight: 96,
+        minHeight: 110,
       }}
     >
       <IconButton
@@ -74,6 +75,7 @@ const iconStyle = {
   '&:hover': {
     transform: 'scale(1.15)',
     backgroundColor: 'rgba(255,255,255,0.08)',
+    color: PURPLE,
   },
 };
 

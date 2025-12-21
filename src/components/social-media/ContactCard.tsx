@@ -3,6 +3,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import DownloadIcon from '@mui/icons-material/Download';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { PURPLE } from '@/constants/colors';
 
 const ContactCard = () => {
   const { t, i18n } = useTranslation();
@@ -30,7 +31,7 @@ const ContactCard = () => {
         gap: 2,
         boxShadow: '0 8px 24px rgba(0,0,0,0.35)',
         flexWrap: 'wrap',
-        minHeight: 96,
+        minHeight: 110,
       }}
     >
       <Button
@@ -47,7 +48,8 @@ const ContactCard = () => {
           textTransform: 'none',
           px: 3,
           '&:hover': {
-            backgroundColor: '#f2f2f2',
+            backgroundColor: PURPLE,
+            color: 'white',
           },
         }}
       >
@@ -68,7 +70,8 @@ const ContactCard = () => {
           textTransform: 'none',
           px: 3,
           '&:hover': {
-            backgroundColor: '#444',
+            backgroundColor: PURPLE,
+            color: 'white',
           },
         }}
       >

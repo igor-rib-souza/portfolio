@@ -46,7 +46,7 @@ const LocationCard = ({ address }: LocationCardProps) => {
         backgroundSize: '400%',
         backgroundPosition: 'center',
         boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-        minHeight: 96,
+        minHeight: 110,
       }}
     >
       <Box
