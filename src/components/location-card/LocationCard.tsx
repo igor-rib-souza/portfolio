@@ -40,7 +40,6 @@ const LocationCard = ({ address }: LocationCardProps) => {
       sx={{
         position: 'relative',
         width: '100%',
-        maxWidth: { md: 520 },
         borderRadius: 3,
         overflow: 'hidden',
         backgroundImage: `url(${mapImage})`,

@@ -46,7 +46,8 @@ const WorkHistoryCard = () => {
         justifyContent: 'space-between',
         boxShadow: '0 8px 24px rgba(0,0,0,0.35)',
         textAlign: 'left',
-        minHeight: { xs: 425, md: 425, xl: 600 },
+        //minHeight: { xs: 425, md: 425, xl: 600 },
+        height: '100%',
       }}
     >
       <Typography sx={{ padding: '16px 16px 0px 16px' }}>PROFISSIONAL</Typography>

@@ -20,12 +20,12 @@ const PresentationCard = () => {
     <Box
       sx={{
         position: 'relative',
-        minHeight: { xs: 425, md: 425, xl: 600 },
         borderRadius: 4,
         overflow: 'hidden',
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        height: '100%',
       }}
     >
       <Box
@@ -51,16 +51,13 @@ const PresentationCard = () => {
         sx={{
           position: 'relative',
           zIndex: 1,
-          padding: { xs: 3, md: 4 },
+          height: '100%',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
-          color: 'common.white',
-
-          textAlign: { xs: 'center', md: 'left' },
-          alignItems: { xs: 'center', md: 'flex-start' },
-
-          minHeight: 'inherit',
+          alignItems: 'left',
+          textAlign: 'left',
+          p: 2,
         }}
       >
         <Typography variant="body2" sx={{ opacity: 0.8 }}>
@@ -72,12 +69,7 @@ const PresentationCard = () => {
           {t('presentationCard:who_am_i', { name })}
         </Typography>
 
-        <Typography
-          sx={{
-            mt: 2,
-            opacity: 0.9,
-          }}
-        >
+        <Typography sx={{ mt: 2, opacity: 0.9 }}>
           <Trans i18nKey="presentationCard:description" />
         </Typography>
 
@@ -88,7 +80,7 @@ const PresentationCard = () => {
           flexWrap="wrap"
           sx={{
             mt: 3,
-            justifyContent: { xs: 'center', md: 'flex-start' },
+            justifyContent: 'center',
           }}
         >
           {skillsWithAge.map((skill) => (
