@@ -21,7 +21,7 @@ const SocialMediaCard = () => {
         backgroundColor: '#0f0f0f',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         boxShadow: '0 8px 24px rgba(0,0,0,0.35)',
         minHeight: 110,
       }}
