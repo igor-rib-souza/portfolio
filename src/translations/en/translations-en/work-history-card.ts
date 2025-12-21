@@ -10,7 +10,7 @@ const workHistoryCardEN = {
     },
     personal: {
       portfolio:
-        "Igor Souza's professional portfolio, developed to showcase his work experience and personal projects.",
+        "Igor Souza's professional portfolio, developed to showcase mine work experience and personal projects.",
     },
   },
 };
